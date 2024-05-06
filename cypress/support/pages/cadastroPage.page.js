@@ -1,6 +1,7 @@
 export default class CadastroPage {
   inputNome = "#name";
   inputEmail = "#email";
+
   buttonSalvar = "[type='submit']";
 
   typeNome(nome) {
@@ -17,10 +18,19 @@ export default class CadastroPage {
 
   clickNovo() {
     cy.contains("Novo").click();
+    
   }
 
   registrarUsuario(nome, email) {
     // cy.contains("Novo").click();
+    cy.get(this.inputNome).type(nome);
+    cy.get(this.inputEmail).type(email);
+    cy.contains("Salvar").click();
+  }
+
+  registrarUsuario2(nome, email) {
+    cy.visit("https://rarocrud-frontend-88984f6e4454.herokuapp.com/users");
+    cy.contains("Novo").click();
     cy.get(this.inputNome).type(nome);
     cy.get(this.inputEmail).type(email);
     cy.contains("Salvar").click();

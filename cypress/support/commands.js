@@ -23,3 +23,11 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+// Cypress.Commands.add("deletarUsuario", function (id) {
+//   cy.request(
+//     "DELETE",
+//     "'https://rarocrud-80bf38b38f1f.herokuapp.com/api/v1/users/" + id
+//   );
+// });
