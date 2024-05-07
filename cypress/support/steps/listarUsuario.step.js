@@ -17,14 +17,13 @@ When("visualizo que há usuarios cadastrados", function () {
     
 });
 
-When("o site tem <= 6 usuarios cadastrados", function () {
-    cy.intercept("GET", "/api/v1/users", {
-        statusCode: 200,
-        fixture: "listaUsuario6.json",
-    }).as("get");
+When("o site tem 6 usuarios cadastrados", function () {
+  cy.intercept("GET", "/api/v1/users", {
+    statusCode: 200,
+    fixture: "listaUsuario6.json",
+  }).as("get");
 
-    cy.wait("@get");
-    
+  cy.wait("@get");
 });
 
 When("o site tem 12 usuarios cadastrados", function () {
@@ -58,7 +57,7 @@ Then("consigo consultar os usuarios na listagem", function () {
   cy.get("#listaUsuarios").should("be.visible");
 });
 
-Then("o site terá 1 página", function () {
+Then("o site terá somente 1 página", function () {
   cy.get("#paginacaoAtual").should("have.text", "1 de 1");
 });
 
@@ -70,7 +69,7 @@ Then("consigo avançar para pagina 2", function () {
   listarUser.proximaPag();
 });
 
-Then("consigo retornar para pagina anterior", function () {
+Then("consigo retornar para pagina 1", function () {
   listarUser.voltarPag();
 });
 

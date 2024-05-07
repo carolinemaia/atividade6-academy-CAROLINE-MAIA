@@ -8,9 +8,9 @@ Cenário: Devo conseguir visualizar listagem de usuários quando há usuarios ca
     Quando visualizo que há usuarios cadastrados
     Então consigo consultar os usuarios na listagem
 
-Cenário: Devo conseguir consultar usuarios em uma só página quando houver <= 6 usuarios cadastrados
-    Quando o site tem <= 6 usuarios cadastrados
-    Então o site terá 1 página
+Cenário: Devo conseguir consultar usuarios em uma só página quando houver 6 usuarios cadastrados
+    Quando o site tem 6 usuarios cadastrados
+    Então o site terá somente 1 página
     E não consigo avançar a página
     E não consigo voltar página
 
@@ -18,7 +18,7 @@ Cenário: Devo conseguir avançar pagina quando há 12 usuários cadastrado
     Quando o site tem 12 usuarios cadastrados
     Então o site terá 2 páginas
     E consigo avançar para pagina 2
-    E consigo retornar para pagina anterior
+    E consigo retornar para pagina 1
     
 
 Cenário: Deve ser possivel visualizar os dados dos usuários ao listar os usuários
