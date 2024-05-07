@@ -21,7 +21,7 @@ Cenário: Devo conseguir buscar usuário pelo seu email cadastrado
 Cenário: Devo conseguir ver detalhes dos dados do usuário ao buscar pelo email
     E clico no campo de busca
     Quando digito o e-mail cadastrado
-    E clico em Ver detalhes
+    E consulto os detalhes do usuario
     Então visulizo todos os dados do usuário que possui esse email
 
 Cenário: Deve retornar usuario inexiste ao buscar usuario não cadastrado 

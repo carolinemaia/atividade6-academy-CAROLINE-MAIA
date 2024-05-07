@@ -5,7 +5,7 @@ module.exports = defineConfig({
   e2e: {
     env: {
       baseURL: "https://rarocrud-frontend-88984f6e4454.herokuapp.com",
-      TAGS: "not @ignore",
+      TAGS: "not @ignore"
     },
     specPattern: "cypress/e2e/**/**/*.feature",
     setupNodeEvents(on, config) {

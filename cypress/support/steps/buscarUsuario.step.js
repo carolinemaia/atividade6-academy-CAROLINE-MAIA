@@ -7,16 +7,13 @@ const buscaUsuario = new BuscarUsuario();
 
 var email = fakerPT_BR.internet.email();
 var nome = fakerPT_BR.person.fullName();
-//var id;
-before(() => {
-    cy.intercept("POST", "api/v1/users").as("postBefore")
-    cadastroPage.registrarUsuario2(nome, email);
-  cy.wait("@postBefore")
-    // .then(function (intercept) {
-        
-    //     id = intercept.response.body.id;
-    // })
-});
+
+// before(() => {
+//     cy.intercept("POST", "api/v1/users").as("postBefore")
+//     cadastroPage.registrarUsuario2(nome, email);
+//   cy.wait("@postBefore")
+
+// });
 
 When("clico no campo de busca", function () {
     cy.get(".sc-dcJsrY").click();
@@ -33,9 +30,9 @@ When("digito o nome do usuario cadastrado", function () {
   cy.get(".sc-dcJsrY").type(nome);
 });
 
-When("clico em Ver detalhes", function () {
-    buscaUsuario.verDetalhes();
-})
+When("consulto os detalhes do usuario", function () {
+  buscaUsuario.verDetalhes();
+});
 
 When("busco por um usuario não cadastrado", function () {
   cy.get(".sc-dcJsrY").type("imposivelteressetermocadastradonosite");
@@ -69,7 +66,9 @@ Then("visulizo todos os dados do usuário que possui esse email", function () {
 
 
 Then("o site retorna informando que nao existe esse usuario", function () {
-    cy.contains("Ops! Não existe nenhum usuário para ser exibido.");
+    cy.contains("Ops! Não existe nenhum usuário para ser exibido.").should(
+      "be.visible"
+    );
 });
 
 Then(
