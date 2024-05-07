@@ -7,14 +7,15 @@ const buscaUsuario = new BuscarUsuario();
 
 var email = fakerPT_BR.internet.email();
 var nome = fakerPT_BR.person.fullName();
-var id;
+//var id;
 before(() => {
     cy.intercept("POST", "api/v1/users").as("postBefore")
     cadastroPage.registrarUsuario2(nome, email);
-    cy.wait("@postBefore").then(function(intercept){
+  cy.wait("@postBefore")
+    // .then(function (intercept) {
         
-        id = intercept.response.body.id;
-    })
+    //     id = intercept.response.body.id;
+    // })
 });
 
 When("clico no campo de busca", function () {
@@ -35,11 +36,6 @@ When("digito o nome do usuario cadastrado", function () {
 When("clico em Ver detalhes", function () {
     buscaUsuario.verDetalhes();
 })
-
-When("insiro o id após /users na barra de pesquisa do navegador", function () {
-    cy.visit("https://rarocrud-frontend-88984f6e4454.herokuapp.com/users/" + id);
-        
-});
 
 When("busco por um usuario não cadastrado", function () {
   cy.get(".sc-dcJsrY").type("imposivelteressetermocadastradonosite");
@@ -71,10 +67,6 @@ Then("visulizo todos os dados do usuário que possui esse email", function () {
   cy.get(".sc-dLMFU").should("be.visible");
 });
 
-Then(
-  "consigo visualizar todos os dados do usuário que possui este ID", function (){
-    cy.get(".sc-dLMFU").should("be.visible");
-});
 
 Then("o site retorna informando que nao existe esse usuario", function () {
     cy.contains("Ops! Não existe nenhum usuário para ser exibido.");

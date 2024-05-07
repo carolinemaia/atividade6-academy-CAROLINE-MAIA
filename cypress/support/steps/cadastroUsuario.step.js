@@ -6,7 +6,7 @@ const cadastroPage = new CadastroPage();
 var email = fakerPT_BR.internet.email();
 var nome = fakerPT_BR.person.fullName();
 
-Given("que acessei a pagina inicial", function () {
+Given("que acessei a pagina inicial do site", function () {
     cy.visit("https://rarocrud-frontend-88984f6e4454.herokuapp.com/users");
 });
   
