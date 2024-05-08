@@ -20,7 +20,5 @@ Cenário: Deve ser possível atualizar email de usuario cadastrado
     Entao exibe mensagem de usuario atualizado
     E o novo email deve ser mostrado no cadastro do usuario
 
-
-
-
+Cenário: Não deve ser possível atualizar nome de usuario 
     
