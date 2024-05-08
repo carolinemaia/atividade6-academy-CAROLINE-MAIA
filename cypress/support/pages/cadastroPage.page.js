@@ -18,7 +18,6 @@ export default class CadastroPage {
 
   clickNovo() {
     cy.contains("Novo").click();
-    
   }
 
   registrarUsuario(nome, email) {
@@ -29,7 +28,7 @@ export default class CadastroPage {
   }
 
   registrarUsuario2(nome, email) {
-    cy.visit("https://rarocrud-frontend-88984f6e4454.herokuapp.com/users");
+    cy.visit("/users");
     cy.contains("Novo").click();
     cy.get(this.inputNome).type(nome);
     cy.get(this.inputEmail).type(email);
