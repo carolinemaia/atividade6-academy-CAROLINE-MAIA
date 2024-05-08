@@ -149,6 +149,6 @@ Then(
   }
 );
 
-Then("o botão com opção de cancelar a operação", function () {
+Then("ficará disponivel o botão com opção de cancelar a operação", function () {
   cy.contains("Cancelar").click();
 });

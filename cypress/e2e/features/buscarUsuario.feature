@@ -2,11 +2,10 @@
 Funcionalidade: Buscar usuários
 
 Contexto: Usuario deve ter acessado a página inicial
-Dado que acessei a pagina inicial do site
-E clico no campo de busca
+    Dado que acessei a pagina inicial do site
+    E clico no campo de busca
     
 Cenário: O campo de busca deve está ativo para digitar
-    Quando clico no campo de busca
     Então consigo digitar qualquer termo
 
 Cenário: Devo conseguir buscar usuario pelo Nome

@@ -27,7 +27,7 @@ Cenário: Não deve ser possível cadastrar um usuário com e-mail já cadastrad
     E informar um email ja cadastrado por outro usuário
     E confirmar operação
     Então aparecerá mensagem de erro informando que este e-mail já é utilizado por outro usuário
-    E o botão com opção de cancelar a operação
+    E ficará disponivel o botão com opção de cancelar a operação
 
     
 Esquema do Cenário: Não deve ser possível cadastrar um usuário com formato de nome inválido
@@ -84,7 +84,6 @@ Cenário: Não deve ser possível cadastrar um email menor que 4 caracteres
     | email | @ |
     E confirmar operação
     Entao o site emite mensagem Informe pelo menos 4 caracteres para o e-mail.
-    
 
 
 
