@@ -26,7 +26,7 @@ before(() => {
 });
 
 Given("que acessei a pagina inicial do site", function () {
-  cy.visit("https://rarocrud-frontend-88984f6e4454.herokuapp.com/users");
+  cy.visit("/users");
 });
 
 When("pesquiso por usuario cadastrado", function () {

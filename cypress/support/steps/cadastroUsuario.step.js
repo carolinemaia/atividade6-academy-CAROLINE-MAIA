@@ -7,7 +7,7 @@ var email = fakerPT_BR.internet.email();
 var nome = fakerPT_BR.person.fullName();
 
 Given("que acessei a pagina inicial", function () {
-  cy.visit("https://rarocrud-frontend-88984f6e4454.herokuapp.com/users");
+  cy.visit("/users");
 });
 
 When("clicar em Novo", function () {
