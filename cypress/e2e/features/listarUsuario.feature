@@ -19,8 +19,7 @@ Cenário: Devo conseguir avançar pagina quando há 12 usuários cadastrado
     Então o site terá 2 páginas
     E consigo avançar para pagina 2
     E consigo retornar para pagina 1
-    
-
+ 
 Cenário: Deve ser possivel visualizar os dados dos usuários ao listar os usuários
     Quando listo os usuarios cadastrados
     Então consigo visualizar nome de cada usuario
