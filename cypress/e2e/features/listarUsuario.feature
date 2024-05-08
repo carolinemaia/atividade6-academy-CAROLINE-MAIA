@@ -4,7 +4,7 @@ Funcionalidade: Listar Usuarios
 Contexto: Usuario deve ter acessado a página inicial
 Dado que acessei a pagina inicial do site
 
-Cenário: Devo conseguir visualizar listagem de usuários quando há usuarios cadastrados 
+Cenário: Devo conseguir consultar a lista de usuários quando há usuarios cadastrados 
     Quando visualizo que há usuarios cadastrados
     Então consigo consultar os usuarios na listagem
 
@@ -29,7 +29,16 @@ Cenário: Deve ser possivel visualizar os dados dos usuários ao listar os usuá
     E consigo visualizar botão de excluir de cada usuario
 
 Cenário: O site deve retornar mensagem de usuario nao cadastrado quando não há usuarios registrados
-    Quando verifico que não há usuarios cadastrados
+    Quando não há usuario cadastrado
     Então site retorna informando que não há usuários
+
+Cenário: Deve ser possivel existir opção para cadastrar usuario quando não houver usuario cadastrado
+    Quando não há usuario cadastrado
+    Então o site retorna opção de cadastrar usuario
+
+Cenário: Botão novo deve está habilitado quando não há usuario cadastrado
+    Quando não há usuario cadastrado
+    Então o botão Novo deve está habilitado direcionando para pagina de Cadastro
+    
 
     

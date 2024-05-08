@@ -41,9 +41,9 @@ When("listo os usuarios cadastrados", function () {
   }).as("get");
 });
 
-When("verifico que não há usuarios cadastrados", function () {
+When("não há usuario cadastrado", function () {
   cy.intercept("GET", "/api/v1/users", {
-    statusCode: 500,
+    statusCode: 200,
     body: [],
   }).as("list");
 
@@ -64,10 +64,12 @@ Then("o site terá 2 páginas", function () {
 
 Then("consigo avançar para pagina 2", function () {
   listarUser.proximaPag();
+  cy.get("#paginacaoAtual").should("have.text", "2 de 2");
 });
 
 Then("consigo retornar para pagina 1", function () {
   listarUser.voltarPag();
+  cy.get("#paginacaoAtual").should("have.text", "1 de 2");
 });
 
 Then("não consigo avançar a página", function () {
@@ -107,7 +109,18 @@ Then("consigo visualizar botão de excluir de cada usuario", function () {
 });
 
 Then("site retorna informando que não há usuários", function () {
-  cy.contains("Não foi possível consultar os usuários cadastrados.").should(
+  cy.contains("Ops! Não existe nenhum usuário para ser exibido.").should(
     "be.visible"
   );
 });
+
+Then("o site retorna opção de cadastrar usuario", function () {
+  cy.contains("Cadastre um novo usuário").click();
+});
+
+Then(
+  "o botão Novo deve está habilitado direcionando para pagina de Cadastro",
+  function () {
+    cy.contains("Novo").click();
+  }
+);
