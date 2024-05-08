@@ -1,12 +1,12 @@
 import { fakerPT_BR } from "@faker-js/faker";
-import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
+import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import CadastroPage from "../pages/cadastroPage.page";
 const cadastroPage = new CadastroPage();
 
 var email = fakerPT_BR.internet.email();
 var nome = fakerPT_BR.person.fullName();
 
-Given("que acessei a pagina inicial do site", function () {
+Given("que acessei a pagina inicial", function () {
   cy.visit("https://rarocrud-frontend-88984f6e4454.herokuapp.com/users");
 });
 
